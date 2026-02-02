@@ -1,0 +1,9 @@
+# GridView Pro - robots.txt
+User-agent: *
+Allow: /
+
+# Sitemap location
+Sitemap: https://gridviewpro.com/sitemap.xml
+
+# Crawl-delay for politeness
+Crawl-delay: 1

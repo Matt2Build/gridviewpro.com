@@ -1,0 +1,31 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" viewBox="0 0 1200 630">
+  <defs>
+    <linearGradient id="bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#0066FF"/>
+      <stop offset="100%" style="stop-color:#8B5CF6"/>
+    </linearGradient>
+  </defs>
+  
+  <!-- Background -->
+  <rect width="1200" height="630" fill="url(#bg)"/>
+  
+  <!-- Grid icon (left side) -->
+  <g transform="translate(80, 165)">
+    <rect width="120" height="120" rx="12" fill="white" opacity="0.95"/>
+    <rect x="140" y="0" width="120" height="120" rx="12" fill="white" opacity="0.85"/>
+    <rect x="0" y="140" width="120" height="120" rx="12" fill="white" opacity="0.85"/>
+    <rect x="140" y="140" width="120" height="120" rx="12" fill="white" opacity="0.75"/>
+  </g>
+  
+  <!-- Text -->
+  <text x="420" y="260" font-family="-apple-system, BlinkMacSystemFont, sans-serif" font-size="72" font-weight="800" fill="white">GridView Pro</text>
+  <text x="420" y="340" font-family="-apple-system, BlinkMacSystemFont, sans-serif" font-size="32" fill="white" opacity="0.9">Multi-Browser Window Manager for Mac</text>
+  <text x="420" y="420" font-family="-apple-system, BlinkMacSystemFont, sans-serif" font-size="28" fill="white" opacity="0.8">Monitor multiple websites simultaneously</text>
+  
+  <!-- Price badge -->
+  <rect x="420" y="470" width="160" height="50" rx="25" fill="white"/>
+  <text x="500" y="505" font-family="-apple-system, BlinkMacSystemFont, sans-serif" font-size="24" font-weight="700" fill="#0066FF" text-anchor="middle">$9.99</text>
+  
+  <!-- URL -->
+  <text x="1120" y="590" font-family="-apple-system, BlinkMacSystemFont, sans-serif" font-size="20" fill="white" opacity="0.7" text-anchor="end">gridviewpro.com</text>
+</svg>
