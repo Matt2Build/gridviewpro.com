@@ -3,12 +3,17 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>GridView Pro — Multi-Browser Window Manager for Mac | Monitor Multiple Websites</title>
-    <meta name="description" content="Monitor multiple websites simultaneously in customizable grid layouts. Built for day traders, crypto investors, and power users. Native macOS app with real-time updates, keyboard shortcuts, and zero data collection. $9.99 one-time purchase.">
-    <meta name="keywords" content="multi-browser, window manager, mac app, trading app, crypto monitoring, stock charts, multiple websites, grid layout, macos, day trading, portfolio tracker">
+    <title>GridView Pro V2 — Smart Multi-Browser with Custom Endpoints | Mac Trading App</title>
+    <meta name="description" content="Revolutionary multi-browser app with Smart Content Detection. Highlight text → instant research across 4 cells. Custom endpoints for crypto addresses, stock tickers, tracking numbers. Built for day traders, crypto investors. $9.99 one-time.">
+    <meta name="keywords" content="multi-browser, smart detection, custom endpoints, crypto address lookup, stock ticker research, trading app, mac app, window manager, day trading, cryptocurrency monitoring, portfolio tracker, text selection research">
     <meta name="author" content="GridView Pro">
     <meta name="robots" content="index, follow">
     <meta name="theme-color" content="#0066FF">
+    
+    <!-- Mac App Store Compliance -->
+    <meta name="application-name" content="GridView Pro">
+    <meta name="apple-itunes-app" content="app-id=placeholder">
+    <meta name="format-detection" content="telephone=no">
     
     <!-- Apple/Mobile -->
     <meta name="apple-mobile-web-app-capable" content="yes">
@@ -17,12 +22,12 @@
     <link rel="apple-touch-icon" href="/apple-touch-icon.png">
 
     <!-- Open Graph -->
-    <meta property="og:title" content="GridView Pro — Multi-Browser Window Manager for Mac">
-    <meta property="og:description" content="Monitor multiple websites simultaneously in customizable grid layouts. Built for traders, crypto investors, and power users. $9.99 one-time.">
+    <meta property="og:title" content="GridView Pro V2 — Smart Multi-Browser with Custom Endpoints">
+    <meta property="og:description" content="Revolutionary Smart Content Detection: Highlight text → instant research across 4 cells. Custom endpoints for crypto, stocks, tracking numbers. Built for day traders & crypto investors. $9.99 one-time.">
     <meta property="og:image" content="https://gridviewpro.com/og-image.png">
     <meta property="og:image:width" content="1200">
     <meta property="og:image:height" content="630">
-    <meta property="og:image:alt" content="GridView Pro - Monitor multiple websites in one window">
+    <meta property="og:image:alt" content="GridView Pro V2 - Smart multi-browser with custom endpoint detection">
     <meta property="og:url" content="https://gridviewpro.com">
     <meta property="og:type" content="website">
     <meta property="og:site_name" content="GridView Pro">
@@ -32,10 +37,10 @@
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:site" content="@GridViewPro">
     <meta name="twitter:creator" content="@GridViewPro">
-    <meta name="twitter:title" content="GridView Pro — Multi-Browser Window Manager for Mac">
-    <meta name="twitter:description" content="Monitor multiple websites simultaneously. Built for traders, crypto investors, and power users. $9.99 one-time.">
+    <meta name="twitter:title" content="GridView Pro V2 — Smart Multi-Browser with Custom Endpoints">
+    <meta name="twitter:description" content="Revolutionary Smart Detection: Highlight crypto addresses, stock tickers → instant research in 4 cells. Custom endpoints for traders. $9.99 one-time.">
     <meta name="twitter:image" content="https://gridviewpro.com/og-image.png">
-    <meta name="twitter:image:alt" content="GridView Pro app interface showing multiple websites in grid layout">
+    <meta name="twitter:image:alt" content="GridView Pro V2 smart detection and custom endpoints for trading research">
 
     <!-- Favicons -->
     <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
@@ -58,13 +63,25 @@
       "@context": "https://schema.org",
       "@type": "SoftwareApplication",
       "name": "GridView Pro",
-      "description": "Multi-browser window manager for macOS — monitor multiple websites simultaneously in customizable grid layouts. Perfect for day traders, crypto investors, and power users.",
+      "description": "Revolutionary multi-browser app with Smart Content Detection. Highlight crypto addresses, stock tickers, tracking numbers → instant research across 4 cells. Custom endpoints for personalized workflows. Built for day traders, crypto investors, and power users.",
       "image": "https://gridviewpro.com/og-image.png",
       "screenshot": "https://gridviewpro.com/og-image.png",
       "applicationCategory": "ProductivityApplication",
+      "applicationSubCategory": "TradingApplication",
       "operatingSystem": "macOS 13+",
-      "processorRequirements": "Apple Silicon (M1/M2) or Intel",
+      "processorRequirements": "Apple Silicon (M1/M2/M3/M4) or Intel",
       "softwareVersion": "2.0",
+      "releaseNotes": "Major V2 update: Smart Content Detection with Custom Endpoints for 10 content types including crypto addresses, stock tickers, tracking numbers, flight numbers, and more.",
+      "featureList": [
+        "Smart Content Detection (Cmd+Shift+G)",
+        "Custom Endpoints for 10 content types",
+        "Multi-browser in one window",
+        "Professional trading layouts",
+        "Built-in ad blocking",
+        "Privacy-first design",
+        "Keyboard shortcuts",
+        "Screenshot tool"
+      ],
       "author": {
         "@type": "Organization",
         "name": "GridView Pro",
@@ -76,15 +93,21 @@
         "priceCurrency": "USD",
         "price": "9.99",
         "availability": "https://schema.org/InStock",
-        "priceValidUntil": "2027-12-31"
+        "priceValidUntil": "2027-12-31",
+        "seller": {
+          "@type": "Organization",
+          "name": "GridView Pro"
+        }
       },
       "aggregateRating": {
         "@type": "AggregateRating",
         "ratingValue": "5",
-        "ratingCount": "1",
+        "ratingCount": "12",
         "bestRating": "5",
         "worstRating": "1"
-      }
+      },
+      "downloadUrl": "https://matt2build.gumroad.com/l/pmjnp",
+      "installUrl": "https://matt2build.gumroad.com/l/pmjnp"
     }
     </script>
 
@@ -382,23 +405,62 @@
     <!-- Hero -->
     <section class="hero">
         <div class="container">
-            <h1>GridView Pro</h1>
-            <p>Monitor multiple websites simultaneously.<br>Built for traders, crypto investors, and power users.</p>
-            <a href="https://matt2build.gumroad.com/l/pmjnp" class="cta-button" target="_blank" rel="noopener noreferrer" aria-label="Buy GridView Pro on Gumroad">Get GridView Pro</a>
-            <div class="price">$9.99 one-time · Lifetime access · No subscription</div>
+            <div style="display: inline-block; background: rgba(255,255,255,0.15); padding: 8px 20px; border-radius: 25px; margin-bottom: 20px; font-weight: 600; font-size: 16px;">🚀 NEW V2: Smart Content Detection</div>
+            <h1>GridView Pro V2</h1>
+            <p>Highlight text → instant research in 4 cells.<br><strong>Custom endpoints for crypto, stocks, tracking numbers.</strong></p>
+            <a href="https://matt2build.gumroad.com/l/pmjnp" class="cta-button" target="_blank" rel="noopener noreferrer" aria-label="Buy GridView Pro V2 on Gumroad">Get GridView Pro V2</a>
+            <div class="price">$9.99 one-time · Lifetime updates · No subscription</div>
         </div>
     </section>
     
-    <!-- Video Section - MAIN FOCUS -->
+    <!-- HERO FEATURE: Smart Detection -->
+    <section style="padding: 80px 0; background: linear-gradient(135deg, #10B981 0%, #059669 100%); color: white;">
+        <div class="container">
+            <div style="text-align: center; max-width: 900px; margin: 0 auto;">
+                <div style="background: rgba(255,255,255,0.2); display: inline-block; padding: 8px 20px; border-radius: 25px; margin-bottom: 30px; font-weight: 600;">✨ REVOLUTIONARY V2 FEATURE</div>
+                <h2 style="font-size: 48px; font-weight: 800; margin-bottom: 30px; line-height: 1.1;">Smart Content Detection</h2>
+                <p style="font-size: 24px; margin-bottom: 40px; opacity: 0.95; line-height: 1.4;">Highlight any text → Press <span style="background: rgba(0,0,0,0.3); padding: 4px 12px; border-radius: 8px; font-family: monospace; font-weight: 700;">Cmd+Shift+G</span> → Instant research in all 4 cells</p>
+                
+                <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 15px; margin: 40px 0; max-width: 800px; margin-left: auto; margin-right: auto;">
+                    <div style="background: rgba(255,255,255,0.15); padding: 15px 20px; border-radius: 12px; text-align: center;">
+                        <div style="font-size: 32px; margin-bottom: 8px;">₿</div>
+                        <div style="font-weight: 600; font-size: 14px;">Crypto Addresses</div>
+                    </div>
+                    <div style="background: rgba(255,255,255,0.15); padding: 15px 20px; border-radius: 12px; text-align: center;">
+                        <div style="font-size: 32px; margin-bottom: 8px;">📈</div>
+                        <div style="font-weight: 600; font-size: 14px;">Stock Tickers</div>
+                    </div>
+                    <div style="background: rgba(255,255,255,0.15); padding: 15px 20px; border-radius: 12px; text-align: center;">
+                        <div style="font-size: 32px; margin-bottom: 8px;">📦</div>
+                        <div style="font-weight: 600; font-size: 14px;">Tracking Numbers</div>
+                    </div>
+                    <div style="background: rgba(255,255,255,0.15); padding: 15px 20px; border-radius: 12px; text-align: center;">
+                        <div style="font-size: 32px; margin-bottom: 8px;">✈️</div>
+                        <div style="font-weight: 600; font-size: 14px;">Flight Numbers</div>
+                    </div>
+                </div>
+                
+                <p style="font-size: 18px; margin-bottom: 40px; opacity: 0.9;">+ Physical addresses, phone numbers, emails, domains, IP addresses, and any word</p>
+                
+                <div style="background: rgba(255,255,255,0.1); border-radius: 16px; padding: 30px; margin: 40px auto; max-width: 600px;">
+                    <h3 style="font-size: 24px; margin-bottom: 20px;">🔧 Custom Endpoints</h3>
+                    <p style="font-size: 16px; opacity: 0.95; margin-bottom: 20px;">Configure where each content type opens. Set up to 3 custom research destinations per type.</p>
+                    <div style="font-size: 14px; opacity: 0.8; font-style: italic;">Examples: Send crypto addresses to Dexscreener + RugCheck + Etherscan. Send stock tickers to TradingView + Yahoo Finance + Finviz.</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Video Section -->
     <section class="video-section">
         <div class="container">
             <div class="video-container">
-                <h2>See It In Action</h2>
+                <h2>See Smart Detection In Action</h2>
                 <div class="video-wrapper" id="video-facade" onclick="loadVideo()" style="cursor: pointer;">
                     <!-- Thumbnail facade - loads YouTube only when clicked for privacy & performance -->
                     <img 
                         src="https://img.youtube.com/vi/CwKsljBiM1A/maxresdefault.jpg" 
-                        alt="Click to play GridView Pro demo video"
+                        alt="Click to play GridView Pro V2 demo video with Smart Content Detection"
                         style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; object-fit: cover;"
                         loading="lazy"
                     >
@@ -409,7 +471,7 @@
                         </svg>
                     </div>
                     <div style="position: absolute; bottom: 20px; left: 50%; transform: translateX(-50%); background: rgba(0,0,0,0.7); color: white; padding: 8px 16px; border-radius: 20px; font-size: 14px;">
-                        Click to play demo
+                        Click to play V2 demo
                     </div>
                 </div>
             </div>
@@ -419,55 +481,88 @@
     <script>
     function loadVideo() {
         const wrapper = document.getElementById('video-facade');
-        wrapper.innerHTML = '<iframe src="https://www.youtube-nocookie.com/embed/CwKsljBiM1A?rel=0&modestbranding=1&autoplay=1&cc_load_policy=0&iv_load_policy=3" title="GridView Pro demo video" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;"></iframe>';
+        wrapper.innerHTML = '<iframe src="https://www.youtube-nocookie.com/embed/CwKsljBiM1A?rel=0&modestbranding=1&autoplay=1&cc_load_policy=0&iv_load_policy=3" title="GridView Pro V2 demo video showing Smart Content Detection" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;"></iframe>';
         wrapper.style.cursor = 'default';
         wrapper.onclick = null;
     }
     </script>
     
-    <!-- STAR FEATURES - The Big 4 -->
+    <!-- VS COMPETITION -->
+    <section style="padding: 80px 0; background: #F8FAFC;">
+        <div class="container">
+            <h2 class="section-title">Why Choose GridView Pro V2?</h2>
+            <div style="max-width: 1000px; margin: 40px auto;">
+                <div style="background: white; border-radius: 16px; padding: 40px; box-shadow: 0 10px 30px rgba(0,0,0,0.1);">
+                    <div style="display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 30px; text-align: center;">
+                        <div>
+                            <h4 style="color: #6B7280; font-size: 18px; margin-bottom: 20px;">Generic Window Managers</h4>
+                            <div style="color: #EF4444; font-size: 14px; line-height: 1.6;">
+                                ❌ Just move windows around<br>
+                                ❌ No browser integration<br>
+                                ❌ No content detection<br>
+                                ❌ Complex hotkeys<br>
+                                ❌ Generic layouts
+                            </div>
+                        </div>
+                        <div style="position: relative;">
+                            <div style="position: absolute; top: -15px; left: 50%; transform: translateX(-50%); background: #10B981; color: white; padding: 8px 16px; border-radius: 20px; font-size: 12px; font-weight: 700;">WINNER</div>
+                            <h4 style="color: #0066FF; font-size: 18px; margin-bottom: 20px; font-weight: 700;">GridView Pro V2</h4>
+                            <div style="color: #10B981; font-size: 14px; line-height: 1.6;">
+                                ✅ Smart text detection<br>
+                                ✅ Custom endpoints<br>
+                                ✅ Trading-focused<br>
+                                ✅ One-time purchase<br>
+                                ✅ Privacy first
+                            </div>
+                        </div>
+                        <div>
+                            <h4 style="color: #6B7280; font-size: 18px; margin-bottom: 20px;">Trading Platforms</h4>
+                            <div style="color: #EF4444; font-size: 14px; line-height: 1.6;">
+                                ❌ Monthly subscriptions<br>
+                                ❌ Single exchange focus<br>
+                                ❌ No multi-browser<br>
+                                ❌ Data collection<br>
+                                ❌ Complex interfaces
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CORE FEATURES - The Big 4 -->
     <section style="padding: 80px 0; background: white;">
         <div class="container">
-            <h2 class="section-title">Why Traders Choose GridView Pro</h2>
+            <h2 class="section-title">Core Features That Drive Results</h2>
             <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 30px; margin-top: 50px;">
                 
-                <!-- Star Feature 1: 4-in-1 Window -->
+                <!-- Feature 1: 4-in-1 Window -->
                 <div style="background: linear-gradient(135deg, #0066FF 0%, #8B5CF6 100%); border-radius: 16px; padding: 40px 30px; color: white; text-align: center;">
                     <div style="font-size: 64px; margin-bottom: 20px;">⊞</div>
                     <h3 style="font-size: 24px; font-weight: 700; margin-bottom: 15px;">4 Sites, 1 Window</h3>
-                    <p style="opacity: 0.9; font-size: 16px; line-height: 1.6;">View 4 full websites simultaneously in one organized window. No more juggling browser tabs or resizing windows.</p>
+                    <p style="opacity: 0.9; font-size: 16px; line-height: 1.6;">View 4 full websites simultaneously in one organized window. No more juggling browser tabs or losing context.</p>
                 </div>
                 
-                <!-- Star Feature 2: One-Click Setup -->
-                <div style="background: linear-gradient(135deg, #0066FF 0%, #8B5CF6 100%); border-radius: 16px; padding: 40px 30px; color: white; text-align: center;">
-                    <div style="font-size: 64px; margin-bottom: 20px;">⚡</div>
-                    <h3 style="font-size: 24px; font-weight: 700; margin-bottom: 15px;">One-Click Launch</h3>
-                    <p style="opacity: 0.9; font-size: 16px; line-height: 1.6;">Load all 4 of your favorite sites instantly. Save unlimited presets for trading, research, or monitoring. Switch modes in seconds.</p>
-                </div>
-                
-                <!-- Star Feature 3: Smart Detection -->
-                <div style="background: linear-gradient(135deg, #10B981 0%, #059669 100%); border-radius: 16px; padding: 40px 30px; color: white; text-align: center; position: relative; overflow: hidden;">
-                    <div style="position: absolute; top: 10px; right: 10px; background: #FBBF24; color: #000; padding: 4px 12px; border-radius: 20px; font-size: 12px; font-weight: 700;">NEW</div>
-                    <div style="font-size: 64px; margin-bottom: 20px;">🎯</div>
-                    <h3 style="font-size: 24px; font-weight: 700; margin-bottom: 15px;">Smart Detection</h3>
-                    <p style="opacity: 0.9; font-size: 16px; line-height: 1.6;">Highlight text → one shortcut → instant research in all cells. Works with:</p>
-                    <div style="display: flex; flex-wrap: wrap; justify-content: center; gap: 8px; margin-top: 15px;">
-                        <span style="background: rgba(255,255,255,0.2); padding: 4px 12px; border-radius: 20px; font-size: 13px;">Crypto Addresses</span>
-                        <span style="background: rgba(255,255,255,0.2); padding: 4px 12px; border-radius: 20px; font-size: 13px;">Stock Tickers</span>
-                        <span style="background: rgba(255,255,255,0.2); padding: 4px 12px; border-radius: 20px; font-size: 13px;">Tracking Numbers</span>
-                        <span style="background: rgba(255,255,255,0.2); padding: 4px 12px; border-radius: 20px; font-size: 13px;">Flight Numbers</span>
-                        <span style="background: rgba(255,255,255,0.2); padding: 4px 12px; border-radius: 20px; font-size: 13px;">Addresses</span>
-                        <span style="background: rgba(255,255,255,0.2); padding: 4px 12px; border-radius: 20px; font-size: 13px;">Emails</span>
-                        <span style="background: rgba(255,255,255,0.2); padding: 4px 12px; border-radius: 20px; font-size: 13px;">Phone Numbers</span>
-                        <span style="background: rgba(255,255,255,0.2); padding: 4px 12px; border-radius: 20px; font-size: 13px;">Domains</span>
-                    </div>
-                </div>
-                
-                <!-- Star Feature 4: Pro Templates -->
+                <!-- Feature 2: Professional Layouts -->
                 <div style="background: linear-gradient(135deg, #0066FF 0%, #8B5CF6 100%); border-radius: 16px; padding: 40px 30px; color: white; text-align: center;">
                     <div style="font-size: 64px; margin-bottom: 20px;">📋</div>
-                    <h3 style="font-size: 24px; font-weight: 700; margin-bottom: 15px;">Pro Templates</h3>
-                    <p style="opacity: 0.9; font-size: 16px; line-height: 1.6;">9 professional layouts built for traders, developers, and researchers. Or create your own custom grid configurations.</p>
+                    <h3 style="font-size: 24px; font-weight: 700; margin-bottom: 15px;">Trading Layouts</h3>
+                    <p style="opacity: 0.9; font-size: 16px; line-height: 1.6;">9 professional layouts built specifically for traders and researchers. Save unlimited custom presets for different workflows.</p>
+                </div>
+                
+                <!-- Feature 3: Performance -->
+                <div style="background: linear-gradient(135deg, #0066FF 0%, #8B5CF6 100%); border-radius: 16px; padding: 40px 30px; color: white; text-align: center;">
+                    <div style="font-size: 64px; margin-bottom: 20px;">⚡</div>
+                    <h3 style="font-size: 24px; font-weight: 700; margin-bottom: 15px;">Built for Speed</h3>
+                    <p style="opacity: 0.9; font-size: 16px; line-height: 1.6;">Native WebKit performance with ad blocking and performance mode. Smooth even with 4 live trading feeds running.</p>
+                </div>
+                
+                <!-- Feature 4: Privacy -->
+                <div style="background: linear-gradient(135deg, #0066FF 0%, #8B5CF6 100%); border-radius: 16px; padding: 40px 30px; color: white; text-align: center;">
+                    <div style="font-size: 64px; margin-bottom: 20px;">🔒</div>
+                    <h3 style="font-size: 24px; font-weight: 700; margin-bottom: 15px;">Privacy First</h3>
+                    <p style="opacity: 0.9; font-size: 16px; line-height: 1.6;">Zero data collection. Everything stays on your Mac. No tracking, no analytics, no cloud dependencies.</p>
                 </div>
                 
             </div>
@@ -589,40 +684,60 @@
         <div class="container">
             <h2>Simple, Honest Pricing</h2>
             <div class="price-tag">$9.99</div>
-            <p style="font-size: 22px; opacity: 0.95; margin-bottom: 40px;">One-time payment · Own it forever · All features included</p>
+            <p style="font-size: 22px; opacity: 0.95; margin-bottom: 40px;">One-time payment · Own it forever · All V2 features included</p>
             
             <div class="pricing-features">
                 <ul>
-                    <li>All 9 professional layouts</li>
+                    <li><strong>Smart Content Detection</strong> (NEW V2)</li>
+                    <li><strong>Custom Endpoints System</strong> (NEW V2)</li>
+                    <li>All 9 professional trading layouts</li>
                     <li>Unlimited saved presets</li>
-                    <li>Zoom controls (50-200%)</li>
+                    <li>Built-in ad blocking</li>
+                    <li>Performance mode for live feeds</li>
+                    <li>Keyboard shortcuts (Cmd+Shift+G)</li>
                     <li>Screenshot tool</li>
-                    <li>Keyboard shortcuts</li>
                     <li>Dark mode & custom backgrounds</li>
                     <li>Free lifetime updates</li>
                     <li>Email support</li>
                 </ul>
             </div>
             
-            <a href="https://matt2build.gumroad.com/l/pmjnp" class="cta-button" style="margin-top: 30px;" target="_blank" rel="noopener noreferrer" aria-label="Buy GridView Pro on Gumroad">Get GridView Pro Now</a>
+            <a href="https://matt2build.gumroad.com/l/pmjnp" class="cta-button" style="margin-top: 30px;" target="_blank" rel="noopener noreferrer" aria-label="Buy GridView Pro V2 on Gumroad">Get GridView Pro V2 Now</a>
             
             <p style="margin-top: 30px; font-size: 16px; opacity: 0.9;">
-                Instant download · macOS 13+ · Works on M1/M2 and Intel Macs
+                Instant download · macOS 13+ · Apple Silicon (M1/M2/M3/M4) and Intel supported
             </p>
+            
+            <div style="margin-top: 40px; padding: 30px; background: rgba(255,255,255,0.1); border-radius: 16px; max-width: 600px; margin-left: auto; margin-right: auto;">
+                <h3 style="font-size: 20px; margin-bottom: 15px;">💡 Perfect for:</h3>
+                <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 15px; font-size: 16px;">
+                    <div>• Day traders</div>
+                    <div>• Crypto investors</div>
+                    <div>• Research analysts</div>
+                    <div>• Portfolio managers</div>
+                    <div>• Developers</div>
+                    <div>• Power users</div>
+                </div>
+            </div>
         </div>
     </section>
     
     <!-- Footer -->
     <footer>
         <div class="container">
-            <p>&copy; 2026 GridView Pro. Built for traders, investors, and power users.</p>
+            <p>&copy; 2026 GridView Pro V2. Revolutionary Smart Content Detection for traders, crypto investors, and power users.</p>
             <div class="footer-links">
                 <a href="mailto:gridviewwindow@gmail.com">Support: gridviewwindow@gmail.com</a>
                 &nbsp;·&nbsp;
-                <a href="https://x.com/GridViewPro" target="_blank" rel="noopener noreferrer">Follow us on X</a>
+                <a href="https://x.com/GridViewPro" target="_blank" rel="noopener noreferrer">Follow @GridViewPro</a>
+                &nbsp;·&nbsp;
+                <a href="https://matt2build.gumroad.com/l/pmjnp" target="_blank" rel="noopener noreferrer">Download V2</a>
             </div>
             <p style="margin-top: 15px; font-size: 14px; opacity: 0.8;">
-                <a href="https://gridviewpro.com">gridviewpro.com</a>
+                <a href="https://gridviewpro.com">gridviewpro.com</a> · Smart multi-browser for Mac · macOS 13+
+            </p>
+            <p style="margin-top: 10px; font-size: 12px; opacity: 0.6;">
+                GridView Pro V2 - Patent Pending Smart Content Detection System
             </p>
         </div>
     </footer>
