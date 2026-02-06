@@ -131,6 +131,64 @@
     }
     </script>
 
+    <!-- FAQ structured data -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "What is GridView Pro?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "GridView Pro is a native Mac app that lets you view up to 10 websites simultaneously in one window. It features 1-click professional templates and Smart Content Detection that automatically opens research sites when you highlight text like crypto addresses, stock tickers, phone numbers, and more."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "How does Smart Content Detection work?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Highlight any text — a crypto address, stock ticker, phone number, email, domain, or tracking number — then press Cmd+Shift+G. GridView Pro automatically detects the content type and opens the relevant research sites in your grid layout. It supports 10 content types with customizable endpoints."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Is GridView Pro a one-time purchase or subscription?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "GridView Pro is a one-time purchase of $9.99 with free lifetime updates. No subscription, no recurring fees."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Does GridView Pro collect my data?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "No. GridView Pro has a strict zero data collection policy. Everything stays on your Mac. No tracking, no analytics, no data sent anywhere. Your browsing and research activity is completely private."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "What Mac do I need to run GridView Pro?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "GridView Pro requires macOS 13 (Ventura) or later and supports both Apple Silicon (M1/M2/M3/M4) and Intel Macs."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Where can I buy GridView Pro?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "GridView Pro will be available on the Mac App Store. Sign up at gridviewpro.com to get notified when it launches."
+          }
+        }
+      ]
+    }
+    </script>
+
     <!-- Organization structured data -->
     <script type="application/ld+json">
     {
@@ -148,6 +206,12 @@
         "contactType": "customer support"
       }
     }
+    </script>
+
+    <!-- PostHog Analytics -->
+    <script>
+      !function(t,e){var o,n,p,r;e.__SV||(window.posthog=e,e._i=[],e.init=function(i,s,a){function g(t,e){var o=e.split(".");2==o.length&&(t=t[o[0]],e=o[1]),t[e]=function(){t.push([e].concat(Array.prototype.slice.call(arguments,0)))}}(p=t.createElement("script")).type="text/javascript",p.async=!0,p.src=s.api_host+"/static/array.js",(r=t.getElementsByTagName("script")[0]).parentNode.insertBefore(p,r);var u=e;for(void 0!==a?u=e[a]=[]:a="posthog",u.people=u.people||[],u.toString=function(t){var e="posthog";return"posthog"!==a&&(e+="."+a),t||(e+=" (stub)"),e},u.people.toString=function(){return u.toString(1)+".people (stub)"},o="capture identify alias people.set people.set_once set_config register register_once unregister opt_out_capturing has_opted_out_capturing opt_in_capturing reset isFeatureEnabled getFeatureFlag getFeatureFlagPayload reloadFeatureFlags group updateEarlyAccessFeatureEnrollment getEarlyAccessFeatures getActiveMatchingSurveys getSurveys onFeatureFlags onSessionId".split(" "),n=0;n<o.length;n++)g(u,o[n]);e._i.push([i,s,a])},e.__SV=1)}(document,window.posthog||[]);
+      posthog.init('phc_jdNkgtwhiJF8k7B1NeyeVLhSJ0TkJWNa7Udg9Y2tNuG',{api_host:'https://us.posthog.com',capture_pageview:true,capture_pageleave:true})
     </script>
 
     <style>
@@ -1094,14 +1158,90 @@
         </div>
     </section>
     
+    <!-- Email Signup Section -->
+    <section style="padding: 60px 20px; background: linear-gradient(135deg, #0a1628 0%, #1a1a2e 100%); text-align: center;">
+        <div class="container" style="max-width: 600px;">
+            <h2 style="font-size: 28px; margin-bottom: 10px;">🚀 Get Notified at Launch</h2>
+            <p style="color: #8892b0; margin-bottom: 25px;">Be first to download GridView Pro from the Mac App Store. No spam — just one email when we're live.</p>
+            <form action="https://app.convertkit.com/forms/9060030/subscriptions" method="post" target="_blank" style="display: flex; gap: 10px; justify-content: center; flex-wrap: wrap;">
+                <input type="email" name="email_address" placeholder="you@email.com" required
+                    style="padding: 14px 20px; border-radius: 10px; border: 1px solid #333; background: #1a1a2e; color: #fff; font-size: 16px; min-width: 280px; outline: none;"
+                    onfocus="this.style.borderColor='#0066FF'" onblur="this.style.borderColor='#333'">
+                <button type="submit"
+                    style="padding: 14px 28px; border-radius: 10px; border: none; background: linear-gradient(135deg, #0066FF, #0052CC); color: #fff; font-size: 16px; font-weight: 600; cursor: pointer; white-space: nowrap;"
+                    onmouseover="this.style.transform='scale(1.02)'" onmouseout="this.style.transform='scale(1)'"
+                    onclick="typeof posthog!=='undefined'&&posthog.capture('email_signup_click')">
+                    Notify Me
+                </button>
+            </form>
+            <p style="color: #555; font-size: 12px; margin-top: 12px;">We respect your privacy. Unsubscribe anytime.</p>
+        </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section style="padding: 60px 20px; background: #0d1117;">
+        <div class="container" style="max-width: 800px;">
+            <h2 style="font-size: 32px; text-align: center; margin-bottom: 40px;">Frequently Asked Questions</h2>
+            <div style="display: flex; flex-direction: column; gap: 20px;">
+                <details style="background: #161b22; border-radius: 12px; padding: 20px; cursor: pointer;">
+                    <summary style="font-size: 18px; font-weight: 600; list-style: none; display: flex; justify-content: space-between; align-items: center;">What is GridView Pro? <span style="opacity: 0.5;">+</span></summary>
+                    <p style="margin-top: 12px; color: #8892b0; line-height: 1.6;">GridView Pro is a native Mac app that lets you view up to 10 websites simultaneously in one window. It features 1-click professional templates and Smart Content Detection that automatically opens research sites when you highlight text like crypto addresses, stock tickers, phone numbers, and more.</p>
+                </details>
+                <details style="background: #161b22; border-radius: 12px; padding: 20px; cursor: pointer;">
+                    <summary style="font-size: 18px; font-weight: 600; list-style: none; display: flex; justify-content: space-between; align-items: center;">How does Smart Content Detection work? <span style="opacity: 0.5;">+</span></summary>
+                    <p style="margin-top: 12px; color: #8892b0; line-height: 1.6;">Highlight any text — a crypto address, stock ticker, phone number, email, domain, or tracking number — then press Cmd+Shift+G. GridView Pro automatically detects the content type and opens the relevant research sites in your grid layout. It supports 10 content types with customizable endpoints.</p>
+                </details>
+                <details style="background: #161b22; border-radius: 12px; padding: 20px; cursor: pointer;">
+                    <summary style="font-size: 18px; font-weight: 600; list-style: none; display: flex; justify-content: space-between; align-items: center;">Is it a subscription? <span style="opacity: 0.5;">+</span></summary>
+                    <p style="margin-top: 12px; color: #8892b0; line-height: 1.6;">No. GridView Pro is a one-time purchase of $9.99 with free lifetime updates. No subscription, no recurring fees. Ever.</p>
+                </details>
+                <details style="background: #161b22; border-radius: 12px; padding: 20px; cursor: pointer;">
+                    <summary style="font-size: 18px; font-weight: 600; list-style: none; display: flex; justify-content: space-between; align-items: center;">Does it collect my data? <span style="opacity: 0.5;">+</span></summary>
+                    <p style="margin-top: 12px; color: #8892b0; line-height: 1.6;">No. GridView Pro has a strict zero data collection policy. Everything stays on your Mac. No tracking, no analytics in the app, no data sent anywhere. Your browsing and research activity is completely private.</p>
+                </details>
+                <details style="background: #161b22; border-radius: 12px; padding: 20px; cursor: pointer;">
+                    <summary style="font-size: 18px; font-weight: 600; list-style: none; display: flex; justify-content: space-between; align-items: center;">What Mac do I need? <span style="opacity: 0.5;">+</span></summary>
+                    <p style="margin-top: 12px; color: #8892b0; line-height: 1.6;">macOS 13 (Ventura) or later. Supports both Apple Silicon (M1/M2/M3/M4) and Intel Macs.</p>
+                </details>
+                <details style="background: #161b22; border-radius: 12px; padding: 20px; cursor: pointer;">
+                    <summary style="font-size: 18px; font-weight: 600; list-style: none; display: flex; justify-content: space-between; align-items: center;">Where can I get it? <span style="opacity: 0.5;">+</span></summary>
+                    <p style="margin-top: 12px; color: #8892b0; line-height: 1.6;">GridView Pro will be available exclusively on the Mac App Store. Sign up above to get notified the moment it launches.</p>
+                </details>
+            </div>
+        </div>
+    </section>
+
+    <!-- Second Email Capture (bottom) -->
+    <section style="padding: 40px 20px; background: linear-gradient(135deg, #0052CC 0%, #0066FF 100%); text-align: center;">
+        <div class="container" style="max-width: 600px;">
+            <h3 style="font-size: 22px; margin-bottom: 8px;">Ready to transform your workflow?</h3>
+            <p style="opacity: 0.9; margin-bottom: 20px;">Join the waitlist — launching soon on the Mac App Store.</p>
+            <form action="https://app.convertkit.com/forms/9060030/subscriptions" method="post" target="_blank" style="display: flex; gap: 10px; justify-content: center; flex-wrap: wrap;">
+                <input type="email" name="email_address" placeholder="you@email.com" required
+                    style="padding: 12px 18px; border-radius: 10px; border: 1px solid rgba(255,255,255,0.3); background: rgba(255,255,255,0.1); color: #fff; font-size: 16px; min-width: 280px; outline: none; backdrop-filter: blur(10px);"
+                    onfocus="this.style.borderColor='#fff'" onblur="this.style.borderColor='rgba(255,255,255,0.3)'">
+                <button type="submit"
+                    style="padding: 12px 24px; border-radius: 10px; border: 2px solid #fff; background: transparent; color: #fff; font-size: 16px; font-weight: 600; cursor: pointer; white-space: nowrap;"
+                    onmouseover="this.style.background='#fff';this.style.color='#0052CC'" onmouseout="this.style.background='transparent';this.style.color='#fff'"
+                    onclick="typeof posthog!=='undefined'&&posthog.capture('email_signup_click_bottom')">
+                    Join Waitlist
+                </button>
+            </form>
+        </div>
+    </section>
+
     <!-- Footer -->
     <footer>
         <div class="container">
             <p>&copy; 2026 GridView Pro V2. Revolutionary Smart Content Detection for traders, crypto investors, and power users.</p>
             <div class="footer-links">
-                <a href="mailto:gridviewwindow@gmail.com">Support: gridviewwindow@gmail.com</a>
+                <a href="mailto:gridviewwindow@gmail.com">Support</a>
                 &nbsp;·&nbsp;
-                <a href="https://x.com/GridViewPro" target="_blank" rel="noopener noreferrer">Follow @GridViewPro</a>
+                <a href="https://x.com/GridViewPro" target="_blank" rel="noopener noreferrer">@GridViewPro</a>
+                &nbsp;·&nbsp;
+                <a href="/privacy.html">Privacy Policy</a>
+                &nbsp;·&nbsp;
+                <a href="/terms.html">Terms of Service</a>
                 &nbsp;·&nbsp;
                 <span style="opacity: 0.7;">Coming Soon to Mac App Store</span>
             </div>
