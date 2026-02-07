@@ -62,8 +62,7 @@
     <link rel="manifest" href="/site.webmanifest">
     
     <!-- Preconnect for performance -->
-    <link rel="preconnect" href="https://www.youtube-nocookie.com">
-    <link rel="dns-prefetch" href="https://www.youtube-nocookie.com">
+    <!-- preconnect removed: video is self-hosted -->
     
     <link rel="canonical" href="https://gridviewpro.com">
 
@@ -547,25 +546,18 @@
             
             <!-- Video Section - FRONT AND CENTER -->
             <div style="max-width: 800px; margin: 40px auto 30px;">
-                <div style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; border-radius: 16px; box-shadow: 0 25px 50px rgba(0, 0, 0, 0.25); background: #000;">
-                    <div id="hero-video-facade" onclick="loadHeroVideo()" style="cursor: pointer; position: absolute; top: 0; left: 0; width: 100%; height: 100%;">
-                        <img 
-                            src="https://img.youtube.com/vi/CwKsljBiM1A/maxresdefault.jpg" 
-                            alt="Watch GridView Pro V2 Smart Detection Demo"
-                            style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; object-fit: cover;"
-                            loading="eager"
-                        >
-                        <!-- Large play button overlay -->
-                        <div style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); width: 100px; height: 100px; background: rgba(255,255,255,0.95); border-radius: 50%; display: flex; align-items: center; justify-content: center; transition: all 0.3s ease; box-shadow: 0 10px 30px rgba(0,0,0,0.3);">
-                            <svg width="44" height="44" viewBox="0 0 24 24" fill="#0066FF">
-                                <path d="M8 5v14l11-7z"/>
-                            </svg>
-                        </div>
-                        <!-- Video title overlay -->
-                        <div style="position: absolute; bottom: 25px; left: 50%; transform: translateX(-50%); background: linear-gradient(135deg, rgba(0,102,255,0.9), rgba(139,92,246,0.9)); color: white; padding: 12px 24px; border-radius: 25px; font-size: 16px; font-weight: 600; backdrop-filter: blur(10px);">
-                            ▶ Watch Smart Detection Demo
-                        </div>
-                    </div>
+                <div style="position: relative; overflow: hidden; border-radius: 16px; box-shadow: 0 25px 50px rgba(0, 0, 0, 0.25); background: #000;">
+                    <video 
+                        controls 
+                        playsinline 
+                        preload="metadata"
+                        style="width: 100%; display: block; border-radius: 16px;"
+                        poster=""
+                    >
+                        <source src="tutorial.mov" type="video/quicktime">
+                        <source src="tutorial.mov" type="video/mp4">
+                        Your browser does not support the video tag.
+                    </video>
                 </div>
             </div>
             
@@ -945,23 +937,7 @@
 
     <!-- Video is now in hero section above -->
     
-    <script>
-    function loadHeroVideo() {
-        const wrapper = document.getElementById('hero-video-facade');
-        wrapper.innerHTML = '<iframe src="https://www.youtube-nocookie.com/embed/CwKsljBiM1A?rel=0&modestbranding=1&autoplay=1&cc_load_policy=0&iv_load_policy=3&start=0" title="GridView Pro V2 Smart Detection Demo - Multi-Browser Trading App for Mac" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;"></iframe>';
-        wrapper.style.cursor = 'default';
-        wrapper.onclick = null;
-    }
-    
-    function loadVideo() {
-        const wrapper = document.getElementById('video-facade');
-        if (wrapper) {
-            wrapper.innerHTML = '<iframe src="https://www.youtube-nocookie.com/embed/CwKsljBiM1A?rel=0&modestbranding=1&autoplay=1&cc_load_policy=0&iv_load_policy=3" title="GridView Pro V2 demo video showing Smart Content Detection" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;"></iframe>';
-            wrapper.style.cursor = 'default';
-            wrapper.onclick = null;
-        }
-    }
-    </script>
+    <!-- Video is self-hosted, no lazy-load scripts needed -->
     
     <!-- VS COMPETITION -->
     <section style="padding: 80px 0; background: #F8FAFC;">
