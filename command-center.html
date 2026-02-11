@@ -1,98 +1,52 @@
 <!DOCTYPE html>
-&lt;html&gt;
-&lt;head&gt;
-    &lt;title&gt;Command Center | GridView Pro&lt;/title&gt;
-    &lt;meta name="viewport" content="width=device-width"&gt;
-    &lt;style&gt;
-        body {
-            font: 14px Monaco, Menlo, Consolas, "Courier New", monospace;
-            background: ivory;
-            color: black;
-            margin: 0;
-            padding: 40px 20px;
-            line-height: 1.4;
-        }
-        h1 {
-            font-size: 28px;
-            margin: 0 0 30px 0;
-            font-weight: normal;
-        }
-        .metrics {
-            max-width: 600px;
-            margin: 0 auto;
-        }
-        table {
-            border-collapse: collapse;
-            width: 100%;
-            background: white;
-            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
-        }
-        th, td {
-            border: 1px solid #ddd;
-            padding: 12px 16px;
-            text-align: left;
-        }
-        th {
-            background: #f8f9fa;
-            font-weight: bold;
-            color: #333;
-        }
-        tr:nth-child(even) {
-            background: #fafbfc;
-        }
-        .status {
-            font-family: monospace;
-            font-size: 13px;
-        }
-        .upvotes { color: #f66; }
-        .followers { color: #28a745; }
-        .last-update {
-            font-size: 12px;
-            color: #666;
-            text-align: center;
-            margin-top: 30px;
-        }
-        a {
-            color: #0066cc;
-            text-decoration: none;
-        }
-        a:hover {
-            text-decoration: underline;
-        }
-    &lt;/style&gt;
-&lt;/head&gt;
-&lt;body&gt;
-    &lt;div class="metrics"&gt;
-        &lt;h1&gt;📊 Live Metrics Dashboard&lt;/h1&gt;
-        &lt;table&gt;
-            &lt;tr&gt;
-                &lt;th&gt;Service&lt;/th&gt;
-                &lt;th&gt;Status / Metrics&lt;/th&gt;
-            &lt;/tr&gt;
-            &lt;tr&gt;
-                &lt;td&gt;&lt;strong&gt;PostHog&lt;/strong&gt;&lt;/td&gt;
-                &lt;td class="status"&gt;login req (API auth needed)&lt;/td&gt;
-            &lt;/tr&gt;
-            &lt;tr&gt;
-                &lt;td&gt;&lt;strong&gt;Product Hunt&lt;/strong&gt;&lt;/td&gt;
-                &lt;td class="status"&gt;&lt;span class="upvotes"&gt;0 upvotes&lt;/span&gt; | &lt;span class="followers"&gt;2 followers&lt;/span&gt;&lt;/td&gt;
-            &lt;/tr&gt;
-            &lt;tr&gt;
-                &lt;td&gt;&lt;strong&gt;X (Twitter) Impressions&lt;/strong&gt;&lt;/td&gt;
-                &lt;td class="status"&gt;N/A (connect API)&lt;/td&gt;
-            &lt;/tr&gt;
-            &lt;tr&gt;
-                &lt;td&gt;&lt;strong&gt;Google Search Console&lt;/strong&gt;&lt;/td&gt;
-                &lt;td class="status"&gt;missing (verify domain)&lt;/td&gt;
-            &lt;/tr&gt;
-            &lt;tr style="font-size: 16px; font-weight: bold; background: #e8f5e8;"&gt;
-                &lt;td colspan="2"&gt;🚀 GridView Pro V2 Live on App Store&lt;/td&gt;
-            &lt;/tr&gt;
-        &lt;/table&gt;
-        &lt;div class="last-update"&gt;
-            Last scraped: &lt;span style="color: #007bff;"&gt;2026-02-10 18:00 PST&lt;/span&gt; | 
-            &lt;a href="https://gridviewpro.com/"&gt;← Back to Home&lt;/a&gt;
-        &lt;/div&gt;
-    &lt;/div&gt;
-&lt;/body&gt;
-&lt;/html&gt;
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>GridView Pro Mission Control</title>
+  <style>
+    body { font-family: -apple-system, BlinkMacSystemFont, sans-serif; max-width: 1200px; margin: 0 auto; padding: 20px; }
+    table { width: 100%; border-collapse: collapse; margin-bottom: 20px; }
+    th, td { border: 1px solid #ddd; padding: 12px; text-align: left; }
+    th { background: #f5f5f5; font-weight: 600; }
+    .metric { font-size: 1.2em; font-weight: bold; color: #007aff; }
+    .up { color: #34c759; } .comms { color: #ff9500; }
+  </style>
+</head>
+<body>
+  <h1>🚀 GridView Pro Mission Control (Live Metrics - Feb 11, 2026)</h1>
+  <table>
+    <tr><th>Platform</th><th>Key Metrics</th><th>Status</th></tr>
+    <tr>
+      <td><strong>Product Hunt</strong> (Forums)</td>
+      <td>
+        <span class="metric up">1 ↑</span> votes<br>
+        <span class="metric comms">6 💬</span> comments<br>
+        Threads: "Goodbye tabs..." (1/6), "No more tabs..." (0/?)
+      </td>
+      <td>V3 Launch pending</td>
+    </tr>
+    <tr>
+      <td><strong>PostHog</strong></td>
+      <td>Sessions: <span class="metric">--</span> | Pageviews: <span class="metric">--</span><br>(Navigate to dashboard for live)</td>
+      <td>Tab open, snapshot failed</td>
+    </tr>
+    <tr>
+      <td><strong>Gumroad</strong></td>
+      <td>Sales: <span class="metric">$0</span> (V2 pending upload)</td>
+      <td>Dashboard open - click "New Product"</td>
+    </tr>
+    <tr>
+      <td><strong>App Store</strong> (ID 6758865330)</td>
+      <td>LIVE | Reviews: Check Connect</td>
+      <td>✅ Deployed</td>
+    </tr>
+    <tr>
+      <td><strong>X @GridViewPro</strong></td>
+      <td>Mentions: Check Analytics</td>
+      <td>LIVE post draft ready</td>
+    </tr>
+  </table>
+  <p><a href="/">← Back to Site</a> | Updated: Launch Day</p>
+</body>
+</html>
