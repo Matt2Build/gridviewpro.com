@@ -186,6 +186,11 @@
                 </div>
                 
                 <div class="form-group">
+                    <label for="first-name">First Name (optional)</label>
+                    <input type="text" id="first-name" name="first_name" placeholder="e.g., Alex">
+                </div>
+                
+                <div class="form-group">
                     <label for="use-case">What do you trade? (optional)</label>
                     <input type="text" id="use-case" name="use_case" placeholder="e.g., DeFi tokens, NFTs, BTC/ETH">
                 </div>
@@ -195,16 +200,20 @@
                 </button>
                 
                 <div class="trust">
-                    <p>✓ Instant download</p>
+                    <p>✓ Templates sent via email</p>
                     <p>✓ No spam, ever</p>
                     <p>✓ Unsubscribe anytime</p>
                 </div>
             </form>
             
-            <div id="success-message">
+            <div id="success-message" style="display: none;">
                 <h2>🎉 Check your email!</h2>
                 <p>Your templates are on the way.</p>
                 <p style="margin-top: 15px;">While you wait, <a href="https://apps.apple.com/app/gridview-pro/id6758865330" target="_blank">download GridView Pro</a> to use them!</p>
+            </div>
+            
+            <div id="error-message" style="display: none; background: #EF4444; color: white; padding: 20px; border-radius: 12px; margin-top: 20px;">
+                <p>Something went wrong. Please try again or <a href="mailto:gridviewwindow@gmail.com" style="color: white; text-decoration: underline;">contact us</a>.</p>
             </div>
         </div>
         
@@ -221,11 +230,17 @@
         }
         
         // Form submission
-        document.getElementById('template-form').addEventListener('submit', function(e) {
+        document.getElementById('template-form').addEventListener('submit', async function(e) {
             e.preventDefault();
             
             const email = document.getElementById('email').value;
+            const firstName = document.getElementById('first-name').value;
             const useCase = document.getElementById('use-case').value;
+            const btn = document.getElementById('download-btn');
+            
+            // Show loading state
+            btn.textContent = 'Sending...';
+            btn.disabled = true;
             
             // Track in PostHog
             if (typeof posthog !== 'undefined') {
@@ -233,25 +248,48 @@
                     email_domain: email.split('@')[1],
                     use_case: useCase || 'not_specified'
                 });
-                
-                // Identify user
-                posthog.identify(email, {
-                    email: email,
-                    source: 'free_templates_landing',
-                    use_case: useCase
-                });
             }
             
-            // Hide form, show success
-            document.getElementById('template-form').style.display = 'none';
-            document.getElementById('success-message').style.display = 'block';
-            
-            // Here you would typically:
-            // 1. Send email with template files
-            // 2. Add to email list (Kit/Resend)
-            // 3. Store in database
-            
-            console.log('Template download:', { email, useCase });
+            try {
+                // Send to backend
+                const response = await fetch('https://api.gridviewpro.com/subscribe', {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify({
+                        email: email,
+                        first_name: firstName,
+                        use_case: useCase
+                    })
+                });
+                
+                const data = await response.json();
+                
+                if (data.success) {
+                    // Hide form, show success
+                    document.getElementById('template-form').style.display = 'none';
+                    document.getElementById('success-message').style.display = 'block';
+                    
+                    // Identify in PostHog
+                    if (typeof posthog !== 'undefined') {
+                        posthog.identify(email, {
+                            email: email,
+                            first_name: firstName,
+                            source: 'free_templates_landing',
+                            use_case: useCase,
+                            kit_subscribed: true
+                        });
+                        
+                        posthog.capture('template_kit_subscribe_success');
+                    }
+                } else {
+                    throw new Error(data.error || 'Subscription failed');
+                }
+            } catch (error) {
+                console.error('Error:', error);
+                document.getElementById('error-message').style.display = 'block';
+                btn.textContent = '📥 Download Free Templates';
+                btn.disabled = false;
+            }
         });
         
         // Track button hover
