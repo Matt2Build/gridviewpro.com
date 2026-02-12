@@ -27,7 +27,7 @@ export default async function handler(req, res) {
         'Content-Type': 'application/json'
       },
       body: JSON.stringify({
-        from: 'GridView Pro <templates@gridviewpro.com>',
+        from: 'GridView Pro <onboarding@resend.dev>',
         to: email,
         subject: 'Your Free Crypto Research Templates 🎁',
         html: `
