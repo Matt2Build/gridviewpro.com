@@ -1,4 +1,4 @@
-export default async function handler(req, res) {
+module.exports = async (req, res) => {
   // CORS headers
   res.setHeader('Access-Control-Allow-Origin', '*');
   res.setHeader('Access-Control-Allow-Methods', 'POST, OPTIONS');
@@ -19,7 +19,7 @@ export default async function handler(req, res) {
   }
   
   try {
-    // 1. Send welcome email with templates via Resend
+    // Send welcome email with templates via Resend
     const emailResponse = await fetch('https://api.resend.com/emails', {
       method: 'POST',
       headers: {
@@ -59,13 +59,10 @@ export default async function handler(req, res) {
     if (!emailResponse.ok) {
       const error = await emailResponse.text();
       console.error('Resend error:', error);
-      // Don't fail the request, just log it
     } else {
       console.log('Email sent to:', email);
     }
     
-    // 2. Store in simple JSON file (or database later)
-    // For now, just log it
     console.log('New subscriber:', { email, first_name, use_case, timestamp: new Date().toISOString() });
     
     return res.status(200).json({ 
@@ -78,4 +75,4 @@ export default async function handler(req, res) {
     console.error('Error:', error);
     return res.status(500).json({ error: 'Failed to process request' });
   }
-}
+};
