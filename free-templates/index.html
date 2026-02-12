@@ -181,39 +181,46 @@
             
             <form id="template-form" style="margin-top: 40px;">
                 <div class="form-group">
-                    <label for="email">Email Address</label>
+                    <label for="email">Enter your email to download</label>
                     <input type="email" id="email" name="email" placeholder="you@example.com" required>
                 </div>
                 
-                <div class="form-group">
-                    <label for="first-name">First Name (optional)</label>
-                    <input type="text" id="first-name" name="first_name" placeholder="e.g., Alex">
-                </div>
-                
-                <div class="form-group">
-                    <label for="use-case">What do you trade? (optional)</label>
-                    <input type="text" id="use-case" name="use_case" placeholder="e.g., DeFi tokens, NFTs, BTC/ETH">
-                </div>
-                
                 <button type="submit" class="btn" id="download-btn">
-                    📥 Download Free Templates
+                    📥 Show Download Links
                 </button>
                 
                 <div class="trust">
-                    <p>✓ Templates sent via email</p>
+                    <p>✓ Instant download</p>
                     <p>✓ No spam, ever</p>
-                    <p>✓ Unsubscribe anytime</p>
+                    <p>✓ We only email about updates</p>
                 </div>
             </form>
             
-            <div id="success-message" style="display: none;">
-                <h2>🎉 Check your email!</h2>
-                <p>Your templates are on the way.</p>
-                <p style="margin-top: 15px;">While you wait, <a href="https://apps.apple.com/app/gridview-pro/id6758865330" target="_blank">download GridView Pro</a> to use them!</p>
-            </div>
-            
-            <div id="error-message" style="display: none; background: #EF4444; color: white; padding: 20px; border-radius: 12px; margin-top: 20px;">
-                <p>Something went wrong. Please try again or <a href="mailto:gridviewwindow@gmail.com" style="color: white; text-decoration: underline;">contact us</a>.</p>
+            <div id="downloads-section" style="display: none; margin-top: 40px;">
+                <h2 style="font-size: 28px; margin-bottom: 20px; text-align: center;">🎉 Your Templates Are Ready!</h2>
+                <p style="text-align: center; color: #6B7280; margin-bottom: 30px;">Click to download each template</p>
+                
+                <div style="display: flex; flex-direction: column; gap: 15px;">
+                    <a href="templates/token-due-diligence.json" download class="btn" style="background: linear-gradient(135deg, #10B981 0%, #059669 100%); text-decoration: none; text-align: center;">
+                        🔍 Download Token Due Diligence
+                    </a>
+                    <a href="templates/price-monitoring.json" download class="btn" style="background: linear-gradient(135deg, #3B82F6 0%, #2563EB 100%); text-decoration: none; text-align: center;">
+                        📊 Download Price Monitoring
+                    </a>
+                    <a href="templates/scam-detection.json" download class="btn" style="background: linear-gradient(135deg, #8B5CF6 0%, #7C3AED 100%); text-decoration: none; text-align: center;">
+                        🛡️ Download Scam Detection
+                    </a>
+                </div>
+                
+                <div style="margin-top: 30px; padding: 20px; background: #F9FAFB; border-radius: 12px; text-align: center;">
+                    <p style="margin-bottom: 10px;"><strong>How to use:</strong></p>
+                    <ol style="text-align: left; margin: 0; padding-left: 20px; color: #6B7280;">
+                        <li>Download templates above</li>
+                        <li><a href="https://apps.apple.com/app/gridview-pro/id6758865330" target="_blank" style="color: #0066FF;">Get GridView Pro</a> from App Store</li>
+                        <li>Import templates (File → Import)</li>
+                        <li>Click any template to load instantly!</li>
+                    </ol>
+                </div>
             </div>
         </div>
         
@@ -230,65 +237,37 @@
         }
         
         // Form submission
-        document.getElementById('template-form').addEventListener('submit', async function(e) {
+        document.getElementById('template-form').addEventListener('submit', function(e) {
             e.preventDefault();
             
             const email = document.getElementById('email').value;
-            const firstName = document.getElementById('first-name').value;
-            const useCase = document.getElementById('use-case').value;
             const btn = document.getElementById('download-btn');
-            
-            // Show loading state
-            btn.textContent = 'Sending...';
-            btn.disabled = true;
             
             // Track in PostHog
             if (typeof posthog !== 'undefined') {
                 posthog.capture('template_download_requested', {
-                    email_domain: email.split('@')[1],
-                    use_case: useCase || 'not_specified'
+                    email_domain: email.split('@')[1]
                 });
+                
+                // Identify user
+                posthog.identify(email, {
+                    email: email,
+                    source: 'free_templates_landing'
+                });
+                
+                posthog.capture('template_email_captured');
             }
             
-            try {
-                // Send to backend
-                const response = await fetch('/api/subscribe', {
-                    method: 'POST',
-                    headers: { 'Content-Type': 'application/json' },
-                    body: JSON.stringify({
-                        email: email,
-                        first_name: firstName,
-                        use_case: useCase
-                    })
-                });
-                
-                const data = await response.json();
-                
-                if (data.success) {
-                    // Hide form, show success
-                    document.getElementById('template-form').style.display = 'none';
-                    document.getElementById('success-message').style.display = 'block';
-                    
-                    // Identify in PostHog
-                    if (typeof posthog !== 'undefined') {
-                        posthog.identify(email, {
-                            email: email,
-                            first_name: firstName,
-                            source: 'free_templates_landing',
-                            use_case: useCase,
-                            kit_subscribed: true
-                        });
-                        
-                        posthog.capture('template_kit_subscribe_success');
-                    }
-                } else {
-                    throw new Error(data.error || 'Subscription failed');
-                }
-            } catch (error) {
-                console.error('Error:', error);
-                document.getElementById('error-message').style.display = 'block';
-                btn.textContent = '📥 Download Free Templates';
-                btn.disabled = false;
+            // Store email (you can collect these later)
+            console.log('Email captured:', email);
+            
+            // Hide form, show downloads
+            document.getElementById('template-form').style.display = 'none';
+            document.getElementById('downloads-section').style.display = 'block';
+            
+            // Track download section view
+            if (typeof posthog !== 'undefined') {
+                posthog.capture('template_downloads_shown');
             }
         });
         
@@ -297,6 +276,18 @@
             if (typeof posthog !== 'undefined') {
                 posthog.capture('template_download_button_hovered');
             }
+        });
+        
+        // Track individual template downloads
+        document.querySelectorAll('#downloads-section a').forEach(link => {
+            link.addEventListener('click', function() {
+                const templateName = this.textContent.trim();
+                if (typeof posthog !== 'undefined') {
+                    posthog.capture('template_file_downloaded', {
+                        template: templateName
+                    });
+                }
+            });
         });
     </script>
 </body>
