@@ -4,7 +4,6 @@ export default async function handler(req, res) {
   res.setHeader('Access-Control-Allow-Methods', 'POST, OPTIONS');
   res.setHeader('Access-Control-Allow-Headers', 'Content-Type');
   
-  // Handle preflight
   if (req.method === 'OPTIONS') {
     return res.status(200).end();
   }
@@ -20,62 +19,63 @@ export default async function handler(req, res) {
   }
   
   try {
-    // 1. Create subscriber in Kit
-    const subscriberResponse = await fetch('https://api.kit.com/v4/subscribers', {
+    // 1. Send welcome email with templates via Resend
+    const emailResponse = await fetch('https://api.resend.com/emails', {
       method: 'POST',
       headers: {
-        'X-Kit-Api-Key': process.env.KIT_API_KEY,
+        'Authorization': `Bearer ${process.env.RESEND_API_KEY}`,
         'Content-Type': 'application/json'
       },
       body: JSON.stringify({
-        email_address: email,
-        first_name: first_name || '',
-        fields: {
-          use_case: use_case || 'not_specified',
-          source: 'free_templates_landing'
-        }
+        from: 'GridView Pro <templates@gridviewpro.com>',
+        to: email,
+        subject: 'Your Free Crypto Research Templates 🎁',
+        html: `
+          <h1>Welcome to GridView Pro!</h1>
+          <p>Hi ${first_name || 'there'},</p>
+          <p>Thanks for downloading the free templates. Here's what you're getting:</p>
+          <ul>
+            <li>🔍 <strong>Token Due Diligence</strong> — DexScreener + Etherscan + RugCheck + Twitter</li>
+            <li>📊 <strong>Price Monitoring</strong> — CoinGecko + CMC + TradingView + News</li>
+            <li>🛡️ <strong>Scam Detection</strong> — RugCheck + Etherscan + Token Sniffer + BscScan</li>
+          </ul>
+          <h3>Download your templates:</h3>
+          <p><a href="https://gridviewpro.com/free-templates/templates/token-due-diligence.json" download>Download Token Due Diligence</a></p>
+          <p><a href="https://gridviewpro.com/free-templates/templates/price-monitoring.json" download>Download Price Monitoring</a></p>
+          <p><a href="https://gridviewpro.com/free-templates/templates/scam-detection.json" download>Download Scam Detection</a></p>
+          <h3>How to use:</h3>
+          <ol>
+            <li><a href="https://apps.apple.com/app/gridview-pro/id6758865330">Download GridView Pro</a> from Mac App Store</li>
+            <li>Import templates (File → Import)</li>
+            <li>Click any template to load instantly</li>
+            <li>Try Smart Detection (Cmd+Shift+G on any crypto address)</li>
+          </ol>
+          <p>Questions? Reply to this email.</p>
+          <p>Happy researching!<br>Matt<br>GridView Pro</p>
+        `
       })
     });
     
-    if (!subscriberResponse.ok) {
-      const error = await subscriberResponse.text();
-      console.error('Kit API error:', error);
-      return res.status(500).json({ error: 'Failed to create subscriber' });
+    if (!emailResponse.ok) {
+      const error = await emailResponse.text();
+      console.error('Resend error:', error);
+      // Don't fail the request, just log it
+    } else {
+      console.log('Email sent to:', email);
     }
     
-    const subscriberData = await subscriberResponse.json();
-    const subscriberId = subscriberData.subscriber?.id;
-    
-    // 2. Add to Free Templates form (ID: 7566910)
-    await fetch('https://api.kit.com/v4/forms/7566910/subscribers', {
-      method: 'POST',
-      headers: {
-        'X-Kit-Api-Key': process.env.KIT_API_KEY,
-        'Content-Type': 'application/json'
-      },
-      body: JSON.stringify({ email_address: email })
-    });
-    
-    // 3. Add "Free Templates Download" tag (ID: 7223753)
-    await fetch('https://api.kit.com/v4/tags/7223753/subscribers', {
-      method: 'POST',
-      headers: {
-        'X-Kit-Api-Key': process.env.KIT_API_KEY,
-        'Content-Type': 'application/json'
-      },
-      body: JSON.stringify({ email_address: email })
-    });
-    
-    console.log('Successfully subscribed:', email, 'Subscriber ID:', subscriberId);
+    // 2. Store in simple JSON file (or database later)
+    // For now, just log it
+    console.log('New subscriber:', { email, first_name, use_case, timestamp: new Date().toISOString() });
     
     return res.status(200).json({ 
       success: true, 
       message: 'Check your email for templates!',
-      subscriber_id: subscriberId
+      email_sent: emailResponse.ok
     });
     
   } catch (error) {
     console.error('Error:', error);
-    return res.status(500).json({ error: 'Internal server error' });
+    return res.status(500).json({ error: 'Failed to process request' });
   }
 }
