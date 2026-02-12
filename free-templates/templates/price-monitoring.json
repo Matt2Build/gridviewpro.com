@@ -1,0 +1,33 @@
+{
+  "name": "Price Monitoring",
+  "description": "Real-time price tracking across multiple data sources",
+  "icon": "📊",
+  "category": "Crypto Research",
+  "sites": [
+    {
+      "url": "https://coingecko.com",
+      "name": "CoinGecko",
+      "description": "Market data and rankings"
+    },
+    {
+      "url": "https://coinmarketcap.com",
+      "name": "CoinMarketCap",
+      "description": "Market cap and volume"
+    },
+    {
+      "url": "https://tradingview.com",
+      "name": "TradingView",
+      "description": "Technical analysis charts"
+    },
+    {
+      "url": "https://cointelegraph.com",
+      "name": "CoinTelegraph",
+      "description": "Latest crypto news"
+    }
+  ],
+  "layout": "2x2",
+  "smartDetection": {
+    "enabled": true,
+    "contentTypes": ["crypto_address", "stock_ticker"]
+  }
+}

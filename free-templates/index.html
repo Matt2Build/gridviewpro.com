@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Free Crypto Research Templates | GridView Pro</title>
+    <meta name="description" content="Download 3 free professional templates for crypto research and trading. Instant multi-browser layouts for Dexscreener, Etherscan, RugCheck, and more.">
+    
+    <!-- PostHog Analytics -->
+    <script>
+      !function(t,e){var o,n,p,r;e.__SV||(window.posthog=e,e._i=[],e.init=function(i,s,a){function g(t,e){var o=e.split(".");2==o.length&&(t=t[o[0]],e=o[1]),t[e]=function(){t.push([e].concat(Array.prototype.slice.call(arguments,0)))}}(p=t.createElement("script")).type="text/javascript",p.async=!0,p.src=s.api_host+"/static/array.js",(r=t.getElementsByTagName("script")[0]).parentNode.insertBefore(p,r);var u=e;for(void 0!==a?u=e[a]=[]:a="posthog",u.people=u.people||[],u.toString=function(t){var e="posthog";return"posthog"!==a&&(e+="."+a),t||(e+=" (stub)"),e},u.people.toString=function(){return u.toString(1)+".people (stub)"},o="capture identify alias people.set people.set_once set_config register register_once unregister opt_out_capturing has_opted_out_capturing opt_in_capturing reset isFeatureEnabled getFeatureFlag getFeatureFlagPayload reloadFeatureFlags group updateEarlyAccessFeatureEnrollment getEarlyAccessFeatures getActiveMatchingSurveys getSurveys onFeatureFlags onSessionId".split(" "),n=0;n<o.length;n++)g(u,o[n]);e._i.push([i,s,a])},e.__SV=1)}(document,window.posthog||[]);
+      posthog.init('phc_jdNkgtwhiJF8k7B1NeyeVLhSJ0TkJWNa7Udg9Y2tNuG',{api_host:'https://us.posthog.com',capture_pageview:true,capture_pageleave:true})
+    </script>
+    
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+            line-height: 1.6;
+            color: #1F2937;
+            background: linear-gradient(135deg, #0066FF 0%, #8B5CF6 100%);
+            min-height: 100vh;
+        }
+        .container { max-width: 800px; margin: 0 auto; padding: 40px 20px; }
+        
+        .hero {
+            text-align: center;
+            color: white;
+            padding: 60px 0;
+        }
+        .hero h1 { font-size: 48px; font-weight: 800; margin-bottom: 20px; }
+        .hero p { font-size: 20px; opacity: 0.95; margin-bottom: 30px; }
+        
+        .badge {
+            display: inline-block;
+            background: rgba(255,255,255,0.2);
+            padding: 8px 20px;
+            border-radius: 25px;
+            font-size: 14px;
+            font-weight: 600;
+            margin-bottom: 30px;
+        }
+        
+        .card {
+            background: white;
+            border-radius: 20px;
+            padding: 50px;
+            box-shadow: 0 25px 50px rgba(0,0,0,0.2);
+            margin: 40px 0;
+        }
+        
+        .templates {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 20px;
+            margin: 30px 0;
+        }
+        .template {
+            background: #F9FAFB;
+            padding: 25px;
+            border-radius: 12px;
+            text-align: center;
+            border: 2px solid transparent;
+            transition: all 0.2s;
+        }
+        .template:hover {
+            border-color: #0066FF;
+            transform: translateY(-3px);
+        }
+        .template-icon { font-size: 40px; margin-bottom: 15px; }
+        .template h3 { font-size: 18px; margin-bottom: 10px; color: #0066FF; }
+        .template p { font-size: 14px; color: #6B7280; }
+        
+        .form-group {
+            margin: 30px 0;
+        }
+        .form-group label {
+            display: block;
+            font-weight: 600;
+            margin-bottom: 10px;
+            font-size: 16px;
+        }
+        .form-group input {
+            width: 100%;
+            padding: 15px 20px;
+            border: 2px solid #E5E7EB;
+            border-radius: 12px;
+            font-size: 16px;
+            transition: border-color 0.2s;
+        }
+        .form-group input:focus {
+            outline: none;
+            border-color: #0066FF;
+        }
+        
+        .btn {
+            width: 100%;
+            padding: 18px 30px;
+            background: linear-gradient(135deg, #0066FF 0%, #8B5CF6 100%);
+            color: white;
+            border: none;
+            border-radius: 12px;
+            font-size: 18px;
+            font-weight: 700;
+            cursor: pointer;
+            transition: transform 0.2s, box-shadow 0.2s;
+        }
+        .btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 30px rgba(0,102,255,0.3);
+        }
+        
+        .trust {
+            text-align: center;
+            margin-top: 30px;
+            font-size: 14px;
+            color: #6B7280;
+        }
+        .trust p { margin: 5px 0; }
+        
+        .footer {
+            text-align: center;
+            color: white;
+            padding: 40px 0;
+            font-size: 14px;
+            opacity: 0.9;
+        }
+        .footer a { color: white; text-decoration: underline; }
+        
+        #success-message {
+            display: none;
+            background: #10B981;
+            color: white;
+            padding: 30px;
+            border-radius: 12px;
+            text-align: center;
+            margin-top: 20px;
+        }
+        #success-message h2 { font-size: 28px; margin-bottom: 15px; }
+        #success-message a {
+            color: white;
+            text-decoration: underline;
+            font-weight: 600;
+        }
+        
+        @media (max-width: 600px) {
+            .hero h1 { font-size: 36px; }
+            .card { padding: 30px; }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="hero">
+            <div class="badge">🎁 FREE DOWNLOAD</div>
+            <h1>3 Crypto Research Templates</h1>
+            <p>Professional multi-browser layouts for GridView Pro.<br>Instantly load Dexscreener, Etherscan, RugCheck & more.</p>
+        </div>
+        
+        <div class="card">
+            <h2 style="font-size: 28px; margin-bottom: 15px; text-align: center;">What's Included</h2>
+            <p style="text-align: center; color: #6B7280; margin-bottom: 30px;">Pre-configured 4-panel layouts for common crypto workflows</p>
+            
+            <div class="templates">
+                <div class="template">
+                    <div class="template-icon">🔍</div>
+                    <h3>Token Due Diligence</h3>
+                    <p>Dexscreener + Etherscan + RugCheck + Twitter</p>
+                </div>
+                <div class="template">
+                    <div class="template-icon">📊</div>
+                    <h3>Price Monitoring</h3>
+                    <p>CoinGecko + CoinMarketCap + TradingView + News</p>
+                </div>
+                <div class="template">
+                    <div class="template-icon">🛡️</div>
+                    <h3>Scam Detection</h3>
+                    <p>RugCheck + Etherscan + Token Sniffer + Reputation</p>
+                </div>
+            </div>
+            
+            <form id="template-form" style="margin-top: 40px;">
+                <div class="form-group">
+                    <label for="email">Email Address</label>
+                    <input type="email" id="email" name="email" placeholder="you@example.com" required>
+                </div>
+                
+                <div class="form-group">
+                    <label for="use-case">What do you trade? (optional)</label>
+                    <input type="text" id="use-case" name="use_case" placeholder="e.g., DeFi tokens, NFTs, BTC/ETH">
+                </div>
+                
+                <button type="submit" class="btn" id="download-btn">
+                    📥 Download Free Templates
+                </button>
+                
+                <div class="trust">
+                    <p>✓ Instant download</p>
+                    <p>✓ No spam, ever</p>
+                    <p>✓ Unsubscribe anytime</p>
+                </div>
+            </form>
+            
+            <div id="success-message">
+                <h2>🎉 Check your email!</h2>
+                <p>Your templates are on the way.</p>
+                <p style="margin-top: 15px;">While you wait, <a href="https://apps.apple.com/app/gridview-pro/id6758865330" target="_blank">download GridView Pro</a> to use them!</p>
+            </div>
+        </div>
+        
+        <div class="footer">
+            <p>© 2026 GridView Pro • <a href="/">Back to main site</a></p>
+            <p style="margin-top: 10px; opacity: 0.8;">Works with GridView Pro on Mac App Store</p>
+        </div>
+    </div>
+    
+    <script>
+        // Track page view
+        if (typeof posthog !== 'undefined') {
+            posthog.capture('template_landing_page_viewed');
+        }
+        
+        // Form submission
+        document.getElementById('template-form').addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            const email = document.getElementById('email').value;
+            const useCase = document.getElementById('use-case').value;
+            
+            // Track in PostHog
+            if (typeof posthog !== 'undefined') {
+                posthog.capture('template_download_requested', {
+                    email_domain: email.split('@')[1],
+                    use_case: useCase || 'not_specified'
+                });
+                
+                // Identify user
+                posthog.identify(email, {
+                    email: email,
+                    source: 'free_templates_landing',
+                    use_case: useCase
+                });
+            }
+            
+            // Hide form, show success
+            document.getElementById('template-form').style.display = 'none';
+            document.getElementById('success-message').style.display = 'block';
+            
+            // Here you would typically:
+            // 1. Send email with template files
+            // 2. Add to email list (Kit/Resend)
+            // 3. Store in database
+            
+            console.log('Template download:', { email, useCase });
+        });
+        
+        // Track button hover
+        document.getElementById('download-btn').addEventListener('mouseenter', function() {
+            if (typeof posthog !== 'undefined') {
+                posthog.capture('template_download_button_hovered');
+            }
+        });
+    </script>
+</body>
+</html>

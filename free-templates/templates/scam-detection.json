@@ -1,0 +1,33 @@
+{
+  "name": "Scam Detection",
+  "description": "Multi-layer security check for suspicious tokens and contracts",
+  "icon": "🛡️",
+  "category": "Security",
+  "sites": [
+    {
+      "url": "https://rugcheck.xyz",
+      "name": "RugCheck",
+      "description": "Contract vulnerability scan"
+    },
+    {
+      "url": "https://etherscan.io",
+      "name": "Etherscan",
+      "description": "Contract code verification"
+    },
+    {
+      "url": "https://tokensniffer.com",
+      "name": "Token Sniffer",
+      "description": "Token audit report"
+    },
+    {
+      "url": "https://bscscan.com",
+      "name": "BscScan",
+      "description": "BSC contract check"
+    }
+  ],
+  "layout": "2x2",
+  "smartDetection": {
+    "enabled": true,
+    "contentTypes": ["crypto_address", "domain"]
+  }
+}

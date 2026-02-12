@@ -1,0 +1,33 @@
+{
+  "name": "Token Due Diligence",
+  "description": "Comprehensive token research layout for verifying new crypto investments",
+  "icon": "🔍",
+  "category": "Crypto Research",
+  "sites": [
+    {
+      "url": "https://dexscreener.com",
+      "name": "DexScreener",
+      "description": "Price charts and trading data"
+    },
+    {
+      "url": "https://etherscan.io",
+      "name": "Etherscan",
+      "description": "On-chain transaction analysis"
+    },
+    {
+      "url": "https://rugcheck.xyz",
+      "name": "RugCheck",
+      "description": "Contract safety scanner"
+    },
+    {
+      "url": "https://x.com/search",
+      "name": "Twitter Search",
+      "description": "Community sentiment"
+    }
+  ],
+  "layout": "2x2",
+  "smartDetection": {
+    "enabled": true,
+    "contentTypes": ["crypto_address", "domain"]
+  }
+}
